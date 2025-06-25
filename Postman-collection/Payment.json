@@ -1,0 +1,273 @@
+{
+  "info": {
+    "name": "Payment API Collection",
+    "_postman_id": "d984c4e7-5570-4fc7-8f75-8e8c3d9481b9",
+    "description": "Collection of Payment API endpoints with example data for testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Payments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments"]
+        }
+      }
+    },
+    {
+      "name": "Get Payment by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Payment by Transaction ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/transaction/TXN-1680000000000-123",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "transaction", "TXN-1680000000000-123"]
+        }
+      }
+    },
+    {
+      "name": "Get Payments by User ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/user/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "user", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Payments by Vehicle ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/vehicle/10",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "vehicle", "10"]
+        }
+      }
+    },
+    {
+      "name": "Get Payments by Parking Space ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/parking-space/5",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "parking-space", "5"]
+        }
+      }
+    },
+    {
+      "name": "Get Payments by Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/status/COMPLETED",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "status", "COMPLETED"]
+        }
+      }
+    },
+    {
+      "name": "Get Payments by Method",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/method/CREDIT_CARD",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "method", "CREDIT_CARD"]
+        }
+      }
+    },
+    {
+      "name": "Get User Payments by Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/user/1/status/PENDING",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "user", "1", "status", "PENDING"]
+        }
+      }
+    },
+    {
+      "name": "Get Payments Between Dates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/date-range?startDate=2025-01-01T00:00:00&endDate=2025-06-30T23:59:59",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "date-range"],
+          "query": [
+            { "key": "startDate", "value": "2025-01-01T00:00:00" },
+            { "key": "endDate", "value": "2025-06-30T23:59:59" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get User Payments Between Dates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/user/1/date-range?startDate=2025-05-01T00:00:00&endDate=2025-06-15T23:59:59",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "user", "1", "date-range"],
+          "query": [
+            { "key": "startDate", "value": "2025-05-01T00:00:00" },
+            { "key": "endDate", "value": "2025-06-15T23:59:59" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 1,\n  \"vehicleId\": 10,\n  \"parkingSpaceId\": 5,\n  \"amount\": 300.00,\n  \"parkingDurationHours\": 2,\n  \"hourlyRate\": 150.00,\n  \"paymentMethod\": \"CREDIT_CARD\",\n  \"paymentStatus\": \"PENDING\",\n  \"transactionId\": \"TXN-1680000000000-123\",\n  \"cardNumberMasked\": \"**** **** **** 1234\",\n  \"paymentDate\": \"2025-06-24T10:00:00\",\n  \"parkingStartTime\": \"2025-06-24T08:00:00\",\n  \"parkingEndTime\": \"2025-06-24T10:00:00\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/payments",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments"]
+        }
+      }
+    },
+    {
+      "name": "Process Payment",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cardNumber\": \"4111111111111111\",\n  \"cardHolderName\": \"John Doe\",\n  \"expiryDate\": \"12/27\",\n  \"cvv\": \"123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/payments/1/process",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "1", "process"]
+        }
+      }
+    },
+    {
+      "name": "Refund Payment",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/1/refund",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "1", "refund"]
+        }
+      }
+    },
+    {
+      "name": "Cancel Payment",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/1/cancel",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "1", "cancel"]
+        }
+      }
+    },
+    {
+      "name": "Delete Payment",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Total Revenue",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/stats/total-revenue",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "stats", "total-revenue"]
+        }
+      }
+    },
+    {
+      "name": "Get User Total Payments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/stats/user/1/total-payments",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "stats", "user", "1", "total-payments"]
+        }
+      }
+    },
+    {
+      "name": "Get Completed Payments Count",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/stats/completed-count",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "stats", "completed-count"]
+        }
+      }
+    },
+    {
+      "name": "Get Pending Payments Count",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/payments/stats/pending-count",
+          "host": ["{{base_url}}"],
+          "path": ["api", "payments", "stats", "pending-count"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

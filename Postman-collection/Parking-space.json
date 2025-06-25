@@ -1,0 +1,224 @@
+{
+  "info": {
+    "name": "ParkingSpace API Collection",
+    "_postman_id": "f0f29f41-3e36-4d4c-bc7d-8cb4e154c1d7",
+    "description": "ParkingSpace API endpoints with realistic example data for testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Parking Spaces",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces"]
+        }
+      }
+    },
+    {
+      "name": "Get Parking Space by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Parking Space by Number",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/space-number/PS-101",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "space-number", "PS-101"]
+        }
+      }
+    },
+    {
+      "name": "Get Available Parking Spaces",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/available",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "available"]
+        }
+      }
+    },
+    {
+      "name": "Get Parking Spaces by City",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/city/Colombo",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "city", "Colombo"]
+        }
+      }
+    },
+    {
+      "name": "Get Parking Spaces by Zone",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/zone/ZoneA",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "zone", "ZoneA"]
+        }
+      }
+    },
+    {
+      "name": "Get Parking Spaces by Owner",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/owner/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "owner", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Available Spaces by City and Zone",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/available/city/Colombo/zone/ZoneA",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "available", "city", "Colombo", "zone", "ZoneA"]
+        }
+      }
+    },
+    {
+      "name": "Create Parking Space",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"spaceNumber\": \"PS-101\",\n  \"location\": \"123 Main St\",\n  \"zone\": \"ZoneA\",\n  \"city\": \"Colombo\",\n  \"hourlyRate\": 150.0,\n  \"status\": \"AVAILABLE\",\n  \"ownerId\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces"]
+        }
+      }
+    },
+    {
+      "name": "Update Parking Space",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"spaceNumber\": \"PS-101\",\n  \"location\": \"123 Main St Updated\",\n  \"zone\": \"ZoneA\",\n  \"city\": \"Colombo\",\n  \"hourlyRate\": 180.0,\n  \"status\": \"AVAILABLE\",\n  \"ownerId\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "1"]
+        }
+      }
+    },
+    {
+      "name": "Reserve Parking Space",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"durationHours\": 3\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/1/reserve",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "1", "reserve"]
+        }
+      }
+    },
+    {
+      "name": "Release Parking Space",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/1/release",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "1", "release"]
+        }
+      }
+    },
+    {
+      "name": "Occupy Parking Space",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/1/occupy",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "1", "occupy"]
+        }
+      }
+    },
+    {
+      "name": "Delete Parking Space",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Available Spaces Count by City",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/parking-spaces/stats/available-count/city/Colombo",
+          "host": ["{{base_url}}"],
+          "path": ["api", "parking-spaces", "stats", "available-count", "city", "Colombo"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

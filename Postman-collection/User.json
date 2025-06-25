@@ -1,0 +1,251 @@
+{
+  "info": {
+    "name": "User API Collection",
+    "_postman_id": "2d2a76e8-2e87-4c3e-9e87-5f9d5a1c1234",
+    "description": "User API endpoints with real sample data for Shan",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users"]
+        }
+      }
+    },
+    {
+      "name": "Get User by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get User by Username",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/username/shan",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "username", "shan"]
+        }
+      }
+    },
+    {
+      "name": "Get User by Email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/email/shan11.11@gmail.com",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "email", "shan11.11@gmail.com"]
+        }
+      }
+    },
+    {
+      "name": "Get Users by Type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/type/REGULAR_USER",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "type", "REGULAR_USER"]
+        }
+      }
+    },
+    {
+      "name": "Get Active Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/active",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "active"]
+        }
+      }
+    },
+    {
+      "name": "Get Active Users by Type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/active/type/REGULAR_USER",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "active", "type", "REGULAR_USER"]
+        }
+      }
+    },
+    {
+      "name": "Search Users by Name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/search?name=Shan",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "search"],
+          "query": [
+            {
+              "key": "name",
+              "value": "Shan"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"shan\",\n  \"email\": \"shan11.11@gmail.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"Shan\",\n  \"lastName\": \"Jayawardhana\",\n  \"phoneNumber\": \"+94712345678\",\n  \"userType\": \"REGULAR_USER\",\n  \"isActive\": true\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/register",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "register"]
+        }
+      }
+    },
+    {
+      "name": "Authenticate User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usernameOrEmail\": \"shan\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/authenticate",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "authenticate"]
+        }
+      }
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"shan\",\n  \"email\": \"shan11.11@gmail.com\",\n  \"password\": \"password123\",\n  \"firstName\": \"Shan\",\n  \"lastName\": \"Jayawardhana\",\n  \"phoneNumber\": \"+94712345678\",\n  \"userType\": \"REGULAR_USER\",\n  \"isActive\": true\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "1"]
+        }
+      }
+    },
+    {
+      "name": "Change Password",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currentPassword\": \"password123\",\n  \"newPassword\": \"newPassword123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/1/change-password",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "1", "change-password"]
+        }
+      }
+    },
+    {
+      "name": "Deactivate User",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/1/deactivate",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "1", "deactivate"]
+        }
+      }
+    },
+    {
+      "name": "Activate User",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/1/activate",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "1", "activate"]
+        }
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Active Users Count",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/stats/active-users-count",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "stats", "active-users-count"]
+        }
+      }
+    },
+    {
+      "name": "Get Parking Owners Count",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/users/stats/parking-owners-count",
+          "host": ["{{base_url}}"],
+          "path": ["api", "users", "stats", "parking-owners-count"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

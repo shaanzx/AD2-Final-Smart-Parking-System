@@ -1,0 +1,224 @@
+{
+  "info": {
+    "name": "Vehicle API Collection",
+    "_postman_id": "7a3fca65-9b7e-4fa7-b76d-1d69f2a6f824",
+    "description": "Vehicle API endpoints with real sample data for testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Vehicles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicle by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicle by License Plate",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/license-plate/ABC1234",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "license-plate", "ABC1234"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicles by User ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/user/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "user", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicles by Type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/type/CAR",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "type", "CAR"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicles by Make",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/make/Toyota",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "make", "Toyota"]
+        }
+      }
+    },
+    {
+      "name": "Get Vehicles by Make and Model",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/make/Toyota/model/Corolla",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "make", "Toyota", "model", "Corolla"]
+        }
+      }
+    },
+    {
+      "name": "Get Parked Vehicles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/parked",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "parked"]
+        }
+      }
+    },
+    {
+      "name": "Get Parked Vehicles by User ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/parked/user/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "parked", "user", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Vehicle",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"licensePlate\": \"ABC1234\",\n  \"make\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"year\": 2020,\n  \"color\": \"White\",\n  \"vehicleType\": \"CAR\",\n  \"userId\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/vehicles",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles"]
+        }
+      }
+    },
+    {
+      "name": "Update Vehicle",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"licensePlate\": \"ABC1234\",\n  \"make\": \"Toyota\",\n  \"model\": \"Corolla\",\n  \"year\": 2021,\n  \"color\": \"Silver\",\n  \"vehicleType\": \"CAR\",\n  \"userId\": 1\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "1"]
+        }
+      }
+    },
+    {
+      "name": "Simulate Vehicle Entry",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"parkingSpaceId\": 101\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/1/entry",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "1", "entry"]
+        }
+      }
+    },
+    {
+      "name": "Simulate Vehicle Exit",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/1/exit",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "1", "exit"]
+        }
+      }
+    },
+    {
+      "name": "Delete Vehicle",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Parked Vehicles Count",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/vehicles/stats/parked-count",
+          "host": ["{{base_url}}"],
+          "path": ["api", "vehicles", "stats", "parked-count"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}
