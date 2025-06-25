@@ -13,9 +13,7 @@
 7. [API Documentation](#-api-documentation)  
 8. [Testing & Validation](#-testing--validation)  
 9. [Screenshots & Demo](#-screenshots--demo)  
-10. [Future Enhancements](#-future-enhancements)  
-11. [Contributors](#-contributors)  
-12. [License](#-license)  
+10. [Contributors](#-contributors)  
 
 ---
 
@@ -122,36 +120,21 @@ All API endpoints are tested and documented in the **Postman Collection**.
 ## **🧪 Testing & Validation**  
 ✔ **Postman** – Full API test suite covering all microservices  
 ✔ **Edge Case Testing** – Invalid inputs, failed payments, etc.  
-✔ **Eureka Dashboard** – Confirms all services are registered  
-
-![Eureka](https://github.com/user-attachments/assets/6b38c7af-81d5-4540-a369-7aa2a21a1ff1)
-  
+✔ **Eureka Dashboard** – Confirms all services are registered    
 
 ---
 
 ## **📸 Screenshots & Demo**  
 📂 **See `/docs/screenshots` for:**  
-- Eureka Dashboard  
+- Eureka Dashboard
+  ![Eureka](https://github.com/user-attachments/assets/6b38c7af-81d5-4540-a369-7aa2a21a1ff1)
 - API Request/Response Samples  
-- Postman Test Results  
-
----
-
-## **🚀 Future Enhancements**  
-🔹 **Mobile App Integration** (Android/iOS)  
-🔹 **IoT Sensors** – Real-time parking spot detection  
-🔹 **Analytics Dashboard** – Usage trends & reports  
-🔹 **Multi-language Support**  
+- Postman Test Results   
 
 ---
 
 ## **👥 Contributors**  
-- [https://github.com/shaanzx/]  
-
----
-
-## **📜 License**  
-This project is licensed under **[MIT License](LICENSE.md)**.  
+- https://github.com/shaanzx/] 
 
 ---
 
@@ -162,4 +145,4 @@ This project is licensed under **[MIT License](LICENSE.md)**.
 ---
 
 **🌟 Thank you for checking out SPMS!**  
-For questions, contact: **[shaanz11.11@gmail.com]**
+For questions, contact: **shaanz11.11@gmail.com**
